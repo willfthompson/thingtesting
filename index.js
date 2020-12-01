@@ -37,10 +37,16 @@ fetch("https://www.instagram.com/thingtesting/?__a=1")
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
     console.log(e.toElement.innerText);
+    posts.innerHTML = "";
     if(e.toElement.innerText === "All"){
-      posts.insertAdjacentHTML('beforeEnd', `<h1>TEXT</h1>`);
+      allPosts.forEach(post => {
+        posts.insertAdjacentHTML('beforeEnd', `<h1>TEXT</h1><img src="${post.imgURL}"><p>${post.text}</p><p>${post.likes}</p><p>${post.comments}</p>`);
+      });
     } else {
-      console.log(allPosts.filter(element => element.text.includes(e.toElement.innerText)));
-    }
+      let somePosts = allPosts.filter(element => element.text.includes(e.toElement.innerText));
+      somePosts.forEach(post => {
+        posts.insertAdjacentHTML('beforeEnd', `<h1>TEXT</h1><img src="${post.imgURL}"><p>${post.text}</p><p>${post.likes}</p><p>${post.comments}</p>`);
+      });
+    };
   });
 });
