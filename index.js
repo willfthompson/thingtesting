@@ -50,12 +50,12 @@ buttons.forEach(button => {
     posts.innerHTML = "";
     if(e.toElement.innerText === "All"){
       allPosts.forEach(post => {
-        posts.insertAdjacentHTML('beforeEnd', `<img src="${post.imgURL}"><p>${post.text}</p><div class="nums"><p>${post.likes}</p><p>${post.comments}</p></div>`);
+        posts.insertAdjacentHTML('beforeEnd', `<img src="${post.imgURL}"><div class="all-text"><p>${post.text}</p><div class="nums"><p>Likes ${post.likes}</p><p>Comments ${post.comments}</p></div></div>`);
       });
     } else {
       let somePosts = allPosts.filter(element => element.text.includes(e.toElement.innerText));
       somePosts.forEach(post => {
-        posts.insertAdjacentHTML('beforeEnd', `<img src="${post.imgURL}"><p>${post.text}</p><div class="nums"><p>${post.likes}</p><p>${post.comments}</p></div>`);
+        posts.insertAdjacentHTML('beforeEnd', `<img src="${post.imgURL}"><div class="all-text"><p>${post.text}</p><div class="nums"><p>Likes ${post.likes}</p><p>Comments ${post.comments}</p></div></div>`);
       });
     };
   });
