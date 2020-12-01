@@ -1,0 +1,18 @@
+.posts{
+  width: 80vw;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+}
+
+
+.posts img{
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+}
+
+.posts p{
+  padding: 10px;
+}
+
